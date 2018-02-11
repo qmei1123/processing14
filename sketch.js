@@ -10,10 +10,10 @@ var posY = [];
 function setup() {
   createCanvas(1400, 800);
   for ( var i = 0; i < num; i++ ) {
-    posX[i] = width / 2;
-    posY[i] = height / 2;
+    posX[i] = width / 3;
+    posY[i] = height / 3;
   }
-  frameRate(5);
+  frameRate(50);
 }
 
 function draw() {
@@ -35,9 +35,11 @@ function draw() {
 
   // Draw a line connecting the points
   for ( var j = 1; j < num; j++ ) {
-    var val = j / num * 100.0 + 51;
+    var val = j*.75 / num * 255.0 + 51;
     stroke(val);
-    line(posY[j - 1], posX[j - 1], posY[j], posX[j]);
-      line(posX[j - 1], posY[j - 1], posX[j], posY[j]);
+    line(posY[j - 1], posX[j - 2], posY[j], posX[j]);
+      line(posX[j - 4], posY[j - 1], posX[j], posY[j]);
+
+      
   }
 }
